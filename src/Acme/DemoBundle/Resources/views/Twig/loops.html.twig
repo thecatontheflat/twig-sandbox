@@ -9,10 +9,11 @@
             <th>letter</th>
         </tr>
     {% endif %}
-    <tr>
+
+    <tr bgcolor="{{ cycle(['cyan', 'gray', 'lightgreen'], loop.index) }}">
         <td>{{ loop.index0 }}</td>
         <td>{{ loop.index }}</td>
-        <td>{{ letter }}</td>
+        <td>{{ letter }} {{ loop.index is odd ? ' - odd' }}</td>
     </tr>
 {% endfor %}
 </table>

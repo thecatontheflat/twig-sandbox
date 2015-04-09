@@ -2,6 +2,7 @@
 
 namespace Acme\DemoBundle\Controller;
 
+use Acme\DemoBundle\Model\SomeObject;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +24,16 @@ class TwigController extends Controller
     }
 
     /**
-     * @Route("/internal-controller", name="internalControllerDemo")
+     * @Route("/asset-version")
+     * @Template()
+     */
+    public function assetVersionAction()
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/internal-controller")
      * @Template()
      */
     public function internalControllerDemoAction()
@@ -58,5 +68,30 @@ class TwigController extends Controller
     public function loopsAction()
     {
         return [];
+    }
+
+    /**
+     * @Route("/include-with")
+     * @Template()
+     */
+    public function includeWithAction()
+    {
+        return [
+            'text' => 'Content of variable text',
+            'text2' => 'Another content of variable text2',
+            'text3' => 'Additional content of variable text3',
+        ];
+    }
+
+    /**
+     * @Route("/getter")
+     * @Template()
+     */
+    public function objectGetterAction()
+    {
+        $someObject = new SomeObject();
+        return [
+            'object' => $someObject
+        ];
     }
 }

@@ -1,0 +1,5 @@
+<h1>Narrowing scope of include</h1>
+
+{% include 'AcmeDemoBundle:Twig:includeWithContent.html.twig' %}
+<br/>
+{% include 'AcmeDemoBundle:Twig:includeWithContent.html.twig' with {text: text} only %}
