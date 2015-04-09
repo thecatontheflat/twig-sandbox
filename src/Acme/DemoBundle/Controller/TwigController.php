@@ -32,10 +32,10 @@ class TwigController extends Controller
     }
 
     /**
-     * @Route("/internal-controller-included", name="includedInternalController")
+     * @Route("/esi", name="includedESIAction")
      * @Template()
      */
-    public function includedInternalControllerAction()
+    public function includedESIAction()
     {
         return [];
     }
