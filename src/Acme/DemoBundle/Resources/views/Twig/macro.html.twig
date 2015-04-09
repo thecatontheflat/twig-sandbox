@@ -1,0 +1,17 @@
+<h1>Macro example</h1>
+
+{% macro renderTable(amountOfRows, colors) %}
+    <table>
+        {% for i in 0..amountOfRows %}
+            <tr>
+                <td bgcolor="{{ cycle(colors, loop.index0) }}">{{ i }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br/>
+{% endmacro %}
+
+{% import _self as helpers %}
+
+{{ helpers.renderTable(5, ['red', 'green', 'orange']) }}
+{{ helpers.renderTable(15, ['cyan', 'orange']) }}

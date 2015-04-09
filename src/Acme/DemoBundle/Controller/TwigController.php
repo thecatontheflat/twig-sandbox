@@ -94,4 +94,13 @@ class TwigController extends Controller
             'object' => $someObject
         ];
     }
+
+    /**
+     * @Route("/macro")
+     * @Template()
+     */
+    public function macroAction()
+    {
+        return [];
+    }
 }
