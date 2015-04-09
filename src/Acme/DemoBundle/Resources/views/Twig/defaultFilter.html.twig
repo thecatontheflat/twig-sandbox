@@ -1,0 +1,8 @@
+<h1>Default filter demo</h1>
+
+<p>Existing variable: {{ variable }}</p>
+<p>Not existing variable: {{ variableeee|default() }}</p>
+
+{% if variable|default(false) %}
+    <p>Default filter checks for both isset() and empty()</p>
+{% endif %}

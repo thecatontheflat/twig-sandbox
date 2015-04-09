@@ -39,4 +39,24 @@ class TwigController extends Controller
     {
         return [];
     }
+
+    /**
+     * @Route("/default-filter")
+     * @Template()
+     */
+    public function defaultFilterAction()
+    {
+        return [
+            'variable' => 111
+        ];
+    }
+
+    /**
+     * @Route("/loops")
+     * @Template()
+     */
+    public function loopsAction()
+    {
+        return [];
+    }
 }

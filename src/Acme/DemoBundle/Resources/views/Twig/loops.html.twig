@@ -1,0 +1,18 @@
+<h1>Loops</h1>
+
+<table border="1">
+{% for letter in 'a'..'z' if letter != 'b' %}
+    {% if loop.first %}
+        <tr>
+            <th>loop.index0</th>
+            <th>loop.index</th>
+            <th>letter</th>
+        </tr>
+    {% endif %}
+    <tr>
+        <td>{{ loop.index0 }}</td>
+        <td>{{ loop.index }}</td>
+        <td>{{ letter }}</td>
+    </tr>
+{% endfor %}
+</table>
