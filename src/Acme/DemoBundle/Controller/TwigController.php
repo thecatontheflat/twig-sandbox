@@ -33,6 +33,15 @@ class TwigController extends Controller
     }
 
     /**
+     * @Route("/spaceless")
+     * @Template()
+     */
+    public function spacelessAction()
+    {
+        return [];
+    }
+
+    /**
      * @Route("/url-builder")
      * @Template()
      */

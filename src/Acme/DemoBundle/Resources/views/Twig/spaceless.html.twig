@@ -1,0 +1,15 @@
+{% include '@AcmeDemo/Twig/menu.html.twig' %}
+
+<h1>Spaceless Example</h1>
+
+<!-- Not spaceless -->
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+
+<!-- Spaceless -->
+{% spaceless %}
+<p>This is a spaceless paragraph.</p>
+<p>This is a spaceless paragraph.</p>
+<p>This is a spaceless paragraph.</p>
+{% endspaceless %}
