@@ -17,3 +17,15 @@
     </tr>
 {% endfor %}
 </table>
+
+<h1>Batch</h1>
+<table border="1">
+    {% set array = range('a', 'z') %}
+    {% for row in array|batch(3, '-') %}
+        <tr>
+            {% for letter in row %}
+                <td>{{ letter }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
