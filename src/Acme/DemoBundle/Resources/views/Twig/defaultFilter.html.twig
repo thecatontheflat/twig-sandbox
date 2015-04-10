@@ -1,7 +1,13 @@
 <h1>Default filter demo</h1>
 
-<p>Existing variable: {{ variable }}</p>
-<p>Not existing variable: {{ variableeee|default() }}</p>
+<p>Existing variable: {{ variable.existing_index }}</p>
+<p>Not existing variable: {{ variableeee.some_index|default() }}</p>
+
+{% if variable.empty_index is defined %}
+{#{% if variable.empty_index is not empty %}#}
+{#{% if variable.empty_index|default(false) %}#}
+    Variable is defined
+{% endif %}
 
 {% if variable|default(false) %}
     <p>Default filter checks for both isset() and empty()</p>

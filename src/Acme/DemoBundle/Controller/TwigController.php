@@ -24,6 +24,33 @@ class TwigController extends Controller
     }
 
     /**
+     * @Route("/concat")
+     * @Template()
+     */
+    public function concatAction()
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/url-builder")
+     * @Template()
+     */
+    public function urlBuilderAction()
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/url-with-params/{page}")
+     * @Template()
+     */
+    public function urlWithParamsAction()
+    {
+        return [];
+    }
+
+    /**
      * @Route("/asset-version")
      * @Template()
      */
@@ -56,8 +83,12 @@ class TwigController extends Controller
      */
     public function defaultFilterAction()
     {
+        $array['existing_index'] = 'bla';
+        $array['empty_index'] = null;
+
+
         return [
-            'variable' => 111
+            'variable' => $array
         ];
     }
 
