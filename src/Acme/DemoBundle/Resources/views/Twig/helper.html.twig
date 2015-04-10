@@ -1,0 +1,14 @@
+{% macro renderTable(amountOfRows, colors) %}
+    <table>
+        {% for i in 0..amountOfRows %}
+            <tr>
+                <td bgcolor="{{ cycle(colors, loop.index0) }}">{{ i }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br/>
+{% endmacro %}
+
+{% macro menuItem(route, name) %}
+    <li {{ route == app.request.attributes.get('_route') ? 'class="active"'}}><a href="{{ url(route) }}">{{ name }}</a></li>
+{% endmacro %}

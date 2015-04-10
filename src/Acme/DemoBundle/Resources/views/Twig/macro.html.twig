@@ -1,41 +1,8 @@
+{% include '@AcmeDemo/Twig/menu.html.twig' %}
+
 <h1>Macro example</h1>
 
-{% macro renderTable(amountOfRows, colors) %}
-    <table>
-        {% for i in 0..amountOfRows %}
-            <tr>
-                <td bgcolor="{{ cycle(colors, loop.index0) }}">{{ i }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <br/>
-{% endmacro %}
-
-{% macro menuItem(route, name) %}
-    <li {{ route == app.request.attributes.get('_route') ? 'class="active"'}}><a href="{{ url(route) }}">{{ name }}</a></li>
-{% endmacro %}
-
-{% import _self as helpers %}
+{% import '@AcmeDemo/Twig/helper.html.twig' as helpers %}
 
 {{ helpers.renderTable(5, ['red', 'green', 'orange']) }}
 {{ helpers.renderTable(15, ['cyan', 'orange']) }}
-
-<ul>
-    {{ helpers.menuItem('acme_demo_twig_assetversion', 'Assets Versioning') }}
-    {{ helpers.menuItem('acme_demo_twig_concat', 'Conctatenation') }}
-    {{ helpers.menuItem('acme_demo_twig_urlbuilder', 'URL generation') }}
-    {{ helpers.menuItem('acme_demo_twig_internalcontrollerdemo', 'Render, ESI, AJAX') }}
-    {{ helpers.menuItem('acme_demo_twig_defaultfilter', 'Filter "default"') }}
-    {{ helpers.menuItem('acme_demo_twig_loops', 'Loop, cycle, odd') }}
-    {{ helpers.menuItem('acme_demo_twig_includewith', 'Include with ... only') }}
-    {{ helpers.menuItem('acme_demo_twig_objectgetter', 'Accessing object') }}
-    {{ helpers.menuItem('acme_demo_twig_macro', 'Macro') }}
-    {{ helpers.menuItem('acme_demo_twig_globalvariables', 'Global Variables') }}
-    {{ helpers.menuItem('acme_demo_twig_dump', 'dump()') }}
-</ul>
-
-<style>
-    .active {
-        font-weight: bold;
-    }
-</style>
