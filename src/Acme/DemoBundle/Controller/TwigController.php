@@ -103,4 +103,22 @@ class TwigController extends Controller
     {
         return [];
     }
+
+    /**
+     * @Route("/global-variables")
+     * @Template()
+     */
+    public function globalVariablesAction()
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/dump")
+     * @Template()
+     */
+    public function dumpAction()
+    {
+        return [];
+    }
 }
