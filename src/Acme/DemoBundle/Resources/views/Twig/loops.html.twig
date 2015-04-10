@@ -3,21 +3,21 @@
 <h1>Loops</h1>
 
 <table border="1">
-{% for letter in 'a'..'z' if letter != 'b' %}
-    {% if loop.first %}
-        <tr>
-            <th>loop.index0</th>
-            <th>loop.index</th>
-            <th>letter</th>
-        </tr>
-    {% endif %}
+    {% for letter in 'a'..'z' if letter != 'b' %}
+        {% if loop.first %}
+            <tr>
+                <th>loop.index0</th>
+                <th>loop.index</th>
+                <th>letter</th>
+            </tr>
+        {% endif %}
 
-    <tr bgcolor="{{ cycle(['cyan', 'gray', 'lightgreen'], loop.index) }}">
-        <td>{{ loop.index0 }}</td>
-        <td>{{ loop.index }}</td>
-        <td>{{ letter }} {{ loop.index is odd ? ' - odd' }}</td>
-    </tr>
-{% endfor %}
+        <tr bgcolor="{{ cycle(['cyan', 'gray', 'lightgreen'], loop.index) }}">
+            <td>{{ loop.index0 }}</td>
+            <td>{{ loop.index }}</td>
+            <td>{{ letter }} {{ loop.index is odd ? ' - odd' }}</td>
+        </tr>
+    {% endfor %}
 </table>
 
 <h1>Batch</h1>
@@ -31,3 +31,10 @@
         </tr>
     {% endfor %}
 </table>
+
+<h1>Accessing parent loop</h1>
+{% for i in range(0, 3) %}
+    {% for j in range(0, 3) %}
+        Printing child index <strong>{{ loop.index }}</strong> for parent index <strong>{{ loop.parent.loop.index }}</strong> <br/>
+    {% endfor %}
+{% endfor %}
