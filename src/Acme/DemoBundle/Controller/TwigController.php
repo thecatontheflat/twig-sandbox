@@ -121,8 +121,14 @@ class TwigController extends Controller
     public function objectGetterAction()
     {
         $someObject = new SomeObject();
+        $array = [
+            'first_index' => 'first value',
+            'index' => 'some value',
+            'another_index' => 'another value'
+        ];
         return [
-            'object' => $someObject
+            'object' => $someObject,
+            'array' => $array
         ];
     }
 
