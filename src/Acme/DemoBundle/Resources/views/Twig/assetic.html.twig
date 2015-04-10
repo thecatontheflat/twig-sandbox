@@ -1,0 +1,5 @@
+<h1>Assetic Example</h1>
+
+{% stylesheets 'bundles/acmedemo/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
