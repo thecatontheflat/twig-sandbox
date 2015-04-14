@@ -5,9 +5,9 @@
 <p>Existing variable: {{ variable.existing_index }}</p>
 <p>Not existing variable: {{ variableeee.some_index|default() }}</p>
 
-{% if variable.empty_index is defined %}
+{#{% if variable.empty_index is defined %}#}
 {#{% if variable.empty_index is not empty %}#}
-{#{% if variable.empty_index|default(false) %}#}
+{% if variable.empty_index.asd.asd.asd.asd.asd.asd.asd|default(false) %}
     Variable is defined
 {% endif %}
 
