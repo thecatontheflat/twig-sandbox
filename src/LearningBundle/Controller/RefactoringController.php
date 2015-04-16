@@ -2,6 +2,7 @@
 
 namespace LearningBundle\Controller;
 
+use LearningBundle\Model\ArticleFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -14,6 +15,8 @@ class RefactoringController extends Controller
      */
     public function articlesAction()
     {
+        $articles = ArticleFactory::createArrayOfArticles(15);
+
         return [];
     }
 
