@@ -1,5 +1,10 @@
 {% javascripts '@LearningBundle/Resources/public/js/*' %}
+{#{% javascripts '@LearningBundle/Resources/public/js/*' filter='uglifyjs2' %}#}
+{#{% javascripts '@LearningBundle/Resources/public/js/*' filter='?uglifyjs2' %}#}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
 <h1>Loaded</h1>
+
+<p>Turn off debug to see the difference</p>
+<pre>$kernel = new AppKernel('dev', true);</pre>
