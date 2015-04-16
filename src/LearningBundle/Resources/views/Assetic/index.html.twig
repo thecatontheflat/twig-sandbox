@@ -1,6 +1,7 @@
 {% javascripts '@LearningBundle/Resources/public/js/*' %}
 {#{% javascripts '@LearningBundle/Resources/public/js/*' filter='uglifyjs2' %}#}
 {#{% javascripts '@LearningBundle/Resources/public/js/*' filter='?uglifyjs2' %}#}
+{#{% javascripts 'assets/js/*' output='assets/compiled/js/compiled.js' %}#}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
@@ -8,3 +9,6 @@
 
 <p>Turn off debug to see the difference</p>
 <pre>$kernel = new AppKernel('dev', true);</pre>
+
+<p>An asset is located here: {{ asset('bundles/learning/js/first_file.js') }}</p>
+<p>And also here: {{ asset('assets/js/first_file.js') }}</p>
